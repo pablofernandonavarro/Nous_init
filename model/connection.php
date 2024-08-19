@@ -6,16 +6,16 @@ $username = 'root';
 $password = ''; 
 
 try {
-    $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
-    $pdo = new PDO($dsn, $username, $password);
+    $conn = new mysqli($host, $username, $password, $dbname);
     
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    if ($conn->connect_error) {
+        throw new Exception("Error al conectar a la base de datos: " . $conn->connect_error);
+    }
 
-    echo "Conexión exitosa a la base de datos.";
-    
-} catch (PDOException $e) {
+    $conn->set_charset("utf8mb4");
+
+} catch (Exception $e) {
     echo "Error al conectar a la base de datos: " . $e->getMessage();
 }
 ?>
 
-try
