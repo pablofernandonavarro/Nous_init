@@ -6,7 +6,9 @@ if (empty($_SESSION['usuario']["id_usuario"])) {
   echo "hola";
   exit();
 }
-
+$paginaActual = basename($_SERVER['PHP_SELF'], ".php");
+$paginaActual = str_replace('_', ' ', $paginaActual);
+$paginaActual = ucfirst($paginaActual);
 
 ?>
 <!DOCTYPE html>
@@ -235,29 +237,4 @@ if (empty($_SESSION['usuario']["id_usuario"])) {
     </aside>
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-      <!-- Content Header (Page header) -->
-      <div class="content-header">
-        <div class="container-fluid">
-          <div class="row mb-2">
-            <div class="col-sm-6">
-              <h1 class="m-0">Starter Page</h1>
-            </div><!-- /.col -->
-            <div class="col-sm-6">
-              <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active"> <?php
-            // Obtener el nombre de la página actual sin la extensión .php
-            $paginaActual = basename($_SERVER['PHP_SELF'], ".php");
-
-            // Reemplazar guiones bajos con espacios y capitalizar
-            $paginaActual = str_replace('_', ' ', $paginaActual);
-            $paginaActual = ucfirst($paginaActual);
-
-            echo $paginaActual;
-            ?></li>
-              </ol>
-            </div><!-- /.col -->
-          </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-      </div>
+    

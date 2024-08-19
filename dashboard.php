@@ -1,22 +1,38 @@
-<?php 
+<?php
 include("include/header.php")
 ?>
 
-      <!-- /.content-header -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0"><?php echo $paginaActual;?></h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active"> <?php 
+                                                echo $paginaActual;
+                                                ?></li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <div class="content">
 
-      <!-- Main content -->
-      <div class="content">
+  </div>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
 
-      </div>
-      <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
+<!-- Control Sidebar -->
 
-    <!-- Control Sidebar -->
-   
-    <!-- /.control-sidebar -->
+<!-- /.control-sidebar -->
 
-    <!-- Main Footer -->
+<!-- Main Footer -->
 
 
-  <?php include("include/footer.php")?>
+<?php include("include/footer.php") ?>
